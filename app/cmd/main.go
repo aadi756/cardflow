@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/bnkamalesh/webgo/middleware"
@@ -11,7 +10,6 @@ import (
 	_ "rsc.io/quote"
 )
 
-
 func main() {
 	cfg := webgo.Config{
 		Host:         "",
@@ -19,7 +17,6 @@ func main() {
 		ReadTimeout:  15 * time.Second,
 		WriteTimeout: 60 * time.Second,
 	}
-	fmt.Println(quote.Hello())
 	router := webgo.NewRouter(&cfg, rest.GetRoutes())
 	router.Use(middleware.AccessLog)
 	router.Start()
