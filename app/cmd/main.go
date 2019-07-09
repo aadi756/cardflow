@@ -7,7 +7,6 @@ import (
 
 	"github.com/aadi756/cardflow/app/api/rest"
 	"github.com/bnkamalesh/webgo"
-	_ "rsc.io/quote"
 )
 
 func main() {
