@@ -11,16 +11,28 @@ import (
 func GetRoutes() []*webgo.Route {
 	return []*webgo.Route{
 		&webgo.Route{
-			Name:     "helloworld",                   // A label for the API/URI, this is not used anywhere.
-			Method:   http.MethodGet,                 // request type
-			Pattern:  "/",                            // Pattern for the route
-			Handlers: []http.HandlerFunc{helloWorld}, // route handler
+			Name:     "AtmPinChangeResendOtp",                                              // A label for the API/URI, this is not used anywhere.
+			Method:   http.MethodPost,                                           // request type
+			Pattern:  "/card/pin/otp/resend/sms",                                // Pattern for the route
+			Handlers: []http.HandlerFunc{middleware.Cors(), PinChangeResendOtp}, // route handler
 		},
 		&webgo.Route{
-			Name:     "helloworld",                                      // A label for the API/URI, this is not used anywhere.
-			Method:   http.MethodGet,                                    // request type
-			Pattern:  "/api/:param",                                     // Pattern for the route
-			Handlers: []http.HandlerFunc{middleware.Cors(), helloWorld}, // route handler
+			Name:     "AtmPinChange",                                            // A label for the API/URI, this is not used anywhere.
+			Method:   http.MethodPost,                                         // request type
+			Pattern:  "/card/pin/otp/request",                                 // Pattern for the route
+			Handlers: []http.HandlerFunc{middleware.Cors(), PinChangeRequest}, // route handler
+		},
+		&webgo.Route{
+			Name:     "PhoneConfirm",                                            // A label for the API/URI, this is not used anywhere.
+			Method:   http.MethodPost,                                         // request type
+			Pattern:  "/card/pin/otp/resend/phone",                                 // Pattern for the route
+			Handlers: []http.HandlerFunc{middleware.Cors(), PhoneConfirm}, // route handler
+		},
+		&webgo.Route{
+			Name:     "ActivateCard",                                            // A label for the API/URI, this is not used anywhere.
+			Method:   http.MethodPost,                                         // request type
+			Pattern:  "card/pin/confirm",                                 // Pattern for the route
+			Handlers: []http.HandlerFunc{middleware.Cors(), ActivateCard}, // route handler
 		},
 	}
 }
