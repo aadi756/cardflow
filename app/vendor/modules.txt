@@ -1,6 +1,12 @@
 # github.com/bnkamalesh/webgo v2.5.0+incompatible
 github.com/bnkamalesh/webgo
 github.com/bnkamalesh/webgo/middleware
+# github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
+github.com/globalsign/mgo
+github.com/globalsign/mgo/bson
+github.com/globalsign/mgo/internal/sasl
+github.com/globalsign/mgo/internal/scram
+github.com/globalsign/mgo/internal/json
 # golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c
 golang.org/x/text/language
 golang.org/x/text/internal/tag
