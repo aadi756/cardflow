@@ -9,12 +9,12 @@ import (
 // http://stackoverflow.com/questions/26574594/best-practice-to-maintain-a-mgo-session
 type MongoStore struct {
 	DBName  string
-	session *mgo.Session
+	Session *mgo.Session
 }
 
 // Clone the master session and return
 func (ms *MongoStore) getSession() *mgo.Session {
-	return ms.session.Copy()
+	return ms.Session.Copy()
 }
 
 //GetSessionCollection gets the appropriate MongoDB collection

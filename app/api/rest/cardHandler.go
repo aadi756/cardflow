@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/aadi756/cardflow/app/pkg/transaction"
 	"github.com/bnkamalesh/webgo"
 )
 
@@ -16,8 +17,9 @@ func PinChangeRequest(w http.ResponseWriter, r *http.Request) {
 		// h.ReturnError(err, w, r, nrTxn)
 		return
 	}
+	result , err := transaction.PinChangeRequest()
 
-	webgo.R200(w, payload)
+	webgo.R200(w, result)
 }
 
 func PinChangeResendOtp(w http.ResponseWriter, r *http.Request) {
